@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { captureEvent } from "@/lib/analytics";
 
 function WaitlistForm() {
   const [email, setEmail] = useState("");
@@ -24,6 +25,7 @@ function WaitlistForm() {
       setStatus("success");
       setEmail("");
       setMessage(data.message || "You're on the list!");
+      captureEvent("waitlist_signup", { email });
     } else {
       setStatus("error");
       setMessage(data.error || "Something went wrong.");

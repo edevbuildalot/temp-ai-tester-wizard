@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { PostHog } from "posthog-node";
 
 export async function POST(request: NextRequest) {
   try {
@@ -20,6 +21,19 @@ export async function POST(request: NextRequest) {
     }
 
     console.log("[WAITLIST]", email);
+
+    const posthogKey = process.env.POSTHOG_KEY;
+    if (posthogKey) {
+      const posthog = new PostHog(posthogKey, {
+        host: process.env.POSTHOG_HOST || "https://us.i.posthog.com",
+      });
+      posthog.capture({
+        distinctId: email,
+        event: "waitlist_signup",
+        properties: { email },
+      });
+      await posthog.shutdown();
+    }
 
     return NextResponse.json(
       { message: "You're on the list! We'll be in touch soon." },

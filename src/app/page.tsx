@@ -24,6 +24,12 @@ function WaitlistForm() {
       setStatus("success");
       setEmail("");
       setMessage(data.message || "You're on the list!");
+
+      import("posthog-js").then(({ default: posthog }) => {
+        if (posthog.__loaded) {
+          posthog.capture("waitlist_signup", { email });
+        }
+      });
     } else {
       setStatus("error");
       setMessage(data.error || "Something went wrong.");

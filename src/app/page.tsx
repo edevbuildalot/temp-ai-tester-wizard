@@ -66,12 +66,20 @@ export default function Home() {
       {/* Nav */}
       <nav className="flex items-center justify-between px-6 py-4 max-w-5xl mx-auto w-full">
         <span className="text-lg font-bold tracking-tight">TATW</span>
-        <a
-          href="#waitlist"
-          className="text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
-        >
-          Join Waitlist
-        </a>
+        <div className="flex items-center gap-6">
+          <a
+            href="/ai-ui-previewer"
+            className="text-sm font-medium text-zinc-400 hover:text-zinc-200 transition-colors"
+          >
+            AI UI Previewer
+          </a>
+          <a
+            href="#waitlist"
+            className="text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
+          >
+            Join Waitlist
+          </a>
+        </div>
       </nav>
 
       <main className="flex-1">

@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { usePostHog } from "posthog-js/react";
 
 function WaitlistForm() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+  const posthog = usePostHog();
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -21,6 +23,7 @@ function WaitlistForm() {
     const data = await res.json();
 
     if (res.ok) {
+      posthog?.capture("waitlist_signup", { email });
       setStatus("success");
       setEmail("");
       setMessage(data.message || "You're on the list!");

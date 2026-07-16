@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getSupabase } from "@/lib/supabase";
+import { sendConfirmationEmail } from "@/lib/sendgrid";
 
 export async function POST(request: NextRequest) {
   try {
@@ -19,7 +21,25 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log("[WAITLIST]", email);
+    const { error: insertError } = await getSupabase()
+      .from("waitlist_signups")
+      .insert({ email });
+
+    if (insertError) {
+      if (insertError.code === "23505") {
+        return NextResponse.json(
+          { message: "You're already on the list!" },
+          { status: 200 }
+        );
+      }
+      console.error("[SUPABASE] Insert error:", insertError);
+      return NextResponse.json(
+        { error: "Something went wrong." },
+        { status: 500 }
+      );
+    }
+
+    sendConfirmationEmail(email);
 
     return NextResponse.json(
       { message: "You're on the list! We'll be in touch soon." },

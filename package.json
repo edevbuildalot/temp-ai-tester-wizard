@@ -1,0 +1,11 @@
+{
+  "name": "temp-ai-tester-wizard",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "lint": "echo 'No linter configured for static site'",
+    "typecheck": "echo 'No typecheck configured for static site'",
+    "test": "node test.mjs"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "temp-ai-tester-wizard",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter @tatw/api dev\" \"pnpm --filter @tatw/web dev\"",
+    "build": "pnpm --filter @tatw/api build && pnpm --filter @tatw/web build",
+    "start": "pnpm --filter @tatw/api start"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "esbuild",
+      "puppeteer"
+    ]
+  }
+}

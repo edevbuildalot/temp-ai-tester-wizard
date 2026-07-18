@@ -195,6 +195,41 @@ h2 { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.025em; }
   gap: 1rem;
 }
 
+.waitlist-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.waitlist-form .input {
+  flex: 1;
+}
+
+.waitlist-form .btn {
+  white-space: nowrap;
+}
+
+.waitlist-error {
+  color: var(--danger);
+  font-size: 0.8125rem;
+  margin-top: 0.25rem;
+}
+
+.waitlist-success {
+  background: var(--bg-card);
+  border: 1px solid var(--success);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--success);
+}
+
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

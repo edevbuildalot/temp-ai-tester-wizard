@@ -48,6 +48,10 @@ export interface TestResult {
   screenshotPath: string;
 }
 
+export interface WaitlistResponse {
+  message: string;
+}
+
 export const api = {
   signup: (email: string, password: string, name: string) =>
     request<AuthResponse>('/auth/signup', { method: 'POST', body: JSON.stringify({ email, password, name }) }),
@@ -63,4 +67,7 @@ export const api = {
 
   getTest: (id: string) =>
     request<TestRun>(`/tests/${id}`),
+
+  joinWaitlist: (email: string) =>
+    request<WaitlistResponse>('/waitlist', { method: 'POST', body: JSON.stringify({ email }) }),
 };

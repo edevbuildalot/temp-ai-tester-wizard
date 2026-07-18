@@ -2,6 +2,7 @@ import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import { registerAuthRoutes } from './routes/auth.js';
 import { registerTestRoutes } from './routes/tests.js';
+import { registerWaitlistRoutes } from './routes/waitlist.js';
 
 const app = Fastify({ logger: true });
 
@@ -12,6 +13,7 @@ await app.register(cors, {
 
 registerAuthRoutes(app);
 registerTestRoutes(app);
+registerWaitlistRoutes(app);
 
 app.get('/api/health', async () => ({ status: 'ok' }));
 

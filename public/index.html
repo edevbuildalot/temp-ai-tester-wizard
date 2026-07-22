@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temp AI Tester Wizard — Paste code. Get tests. Ship faster.</title>
+  <meta name="description" content="The fastest way to go from code to a working test case — AI-powered, zero config, one paste." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <span class="header__logo">🧪 TATW</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__badge">Pre-launch · Join the waitlist</div>
+        <h1 class="hero__title">Paste code. Get tests.<br />Ship faster.</h1>
+        <p class="hero__subtitle">The fastest way to go from code to a working test case — AI-powered, zero config, one paste.</p>
+
+        <form id="signup-form" class="signup-form" novalidate>
+          <div class="signup-form__fields">
+            <div class="signup-form__field">
+              <label for="name" class="visually-hidden">Your name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+            </div>
+            <div class="signup-form__field">
+              <label for="email" class="visually-hidden">Email address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+            </div>
+            <button type="submit" class="btn btn--primary signup-form__submit">
+              <span class="signup-form__submit-text">Get Early Access</span>
+              <span class="signup-form__spinner hidden"></span>
+            </button>
+          </div>
+          <p class="signup-form__status" id="form-status" aria-live="polite"></p>
+        </form>
+
+        <p class="hero__social-proof">Coming soon — <strong id="signup-count">0</strong> others waiting for early access</p>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container">
+        <h2 class="section-title">What to expect</h2>
+        <div class="features__grid">
+          <div class="feature-card">
+            <div class="feature-card__icon">⚡</div>
+            <h3 class="feature-card__title">Paste any code, get instant tests</h3>
+            <p class="feature-card__desc">Drop in a function, class, or module — get back ready-to-run tests in seconds. No setup, no config.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">🎯</div>
+            <h3 class="feature-card__title">Real assertions, not AI hallucination</h3>
+            <p class="feature-card__desc">Tests that actually test your logic. Smart assertion generation that understands your code, not just syntax.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">🌐</div>
+            <h3 class="feature-card__title">Supports Python, JavaScript, TypeScript, Go, and more</h3>
+            <p class="feature-card__desc">Multi-language support out of the box. More languages on the way based on what you need.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>Built by <a href="https://github.com/edevbuildalot" target="_blank" rel="noopener noreferrer">@edevbuildalot</a></p>
+    </div>
+  </footer>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "@launchfury/analytics": "/node_modules/@launchfury/analytics/dist/index.js"
+    }
+  }
+  </script>
+  <script type="module" src="/analytics.js"></script>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

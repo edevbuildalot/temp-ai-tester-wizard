@@ -1,0 +1,17 @@
+{
+  "name": "temp-ai-tester-wizard-landing",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site — no build needed'",
+    "deploy": "vercel deploy --prod"
+  },
+  "dependencies": {
+    "@launchfury/analytics": "^0.1.0"
+  },
+  "devDependencies": {
+    "vercel": "^37.0.0"
+  }
+}

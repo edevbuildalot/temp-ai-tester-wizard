@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@launchfury/analytics':
+        specifier: latest
+        version: 0.1.0
+
+packages:
+
+  '@launchfury/analytics@0.1.0':
+    resolution: {integrity: sha512-ws9p/3vkgvG5YoEEMUfgyoDTh3CsJ/SQoUNEMXypd+euMaazejMvXVngP3XQ8Kms4qDkM2C6yUpk2okoEG1t5A==}
+
+snapshots:
+
+  '@launchfury/analytics@0.1.0': {}
